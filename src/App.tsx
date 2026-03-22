@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -15,6 +16,7 @@ import ServiceDetails from "./pages/ServiceDetails";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
+import Technical from "./pages/Technical";
 import NotFound from "./pages/NotFound";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -37,14 +39,18 @@ const AppRoutes = () => {
     }
   }, [location, displayLocation.pathname]);
 
-  const handleLoaderComplete = useCallback(() => {
+  const handleReveal = useCallback(() => {
+    // Safely swap the route while the loader is fully solid
     setDisplayLocation(location);
-    setIsLoading(false);
   }, [location]);
+
+  const handleLoaderComplete = useCallback(() => {
+    setIsLoading(false);
+  }, []);
 
   return (
     <>
-      <PageLoader isLoading={isLoading} onComplete={handleLoaderComplete} />
+      <PageLoader isLoading={isLoading} onComplete={handleLoaderComplete} onReadyToReveal={handleReveal} />
       <ScrollToTop location={displayLocation} />
       <Routes location={displayLocation}>
         <Route element={<Layout />}>
@@ -55,6 +61,7 @@ const AppRoutes = () => {
           <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
           <Route path="/blog/:slug" element={<PageTransition><BlogDetails /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="/technical-index" element={<PageTransition><Technical /></PageTransition>} />
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Route>
       </Routes>
@@ -69,7 +76,9 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <AppRoutes />
+          <ReactLenis root>
+            <AppRoutes />
+          </ReactLenis>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

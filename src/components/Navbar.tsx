@@ -30,8 +30,8 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <header className="fixed top-3 lg:top-10 left-[-1rem] right-[-1rem] md:left-[-1rem]  lg:right-0 z-50" style={{ padding: "0 var(--site-padding)" }}>
-      <nav className="glass-nav rounded-lg h-[80px] flex items-center justify-between px-5 md:px-6 max-w-[750px] lg:max-w-[700px] mx-auto">
+    <header className="fixed top-3 lg:top-10 left-[-0.6rem] right-[-0.6rem] md:left-[-0.6rem]  lg:right-0 z-50" style={{ padding: "0 var(--site-padding)" }}>
+      <nav className="glass-nav rounded-lg h-[70px] lg:h-[80px] flex items-center justify-between px-5 md:px-6 max-w-[750px] lg:max-w-[700px] mx-auto">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0 logo-hover group" onClick={() => setMobileOpen(false)}>
           <img src="/logo.png" alt="Terminal" className="h-6 w-6 object-contain transition-all duration-300 group-hover:filter-[brightness(0)_saturate(100%)_invert(77%)_sepia(62%)_saturate(446%)_hue-rotate(25deg)_brightness(1.05)]" />

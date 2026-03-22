@@ -19,9 +19,11 @@ const NotFound = () => (
           <p className="text-muted-foreground mb-8">The page you're looking for doesn't exist or has been moved.</p>
           <Link
             to="/"
-            className="btn-underline inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-mono text-xs tracking-widest uppercase font-bold"
+            className="inline-flex group bg-[#052424] relative overflow-hidden text-white px-8 py-3 rounded-lg text-xs font-sans font-bold tracking-widest uppercase z-10"
           >
-            GO HOME
+            <span className="relative z-10 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-white after:scale-x-0 after:origin-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-left">
+              GO HOME
+            </span>
           </Link>
         </motion.div>
       </div>

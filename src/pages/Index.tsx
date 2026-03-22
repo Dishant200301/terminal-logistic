@@ -8,8 +8,11 @@ import FeaturesSection from "@/components/home/FeaturesSection";
 import YOSSection from "@/components/home/YOSSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import LogoGridSection from "@/components/home/LogoGridSection";
-import NetworkSection from "@/components/home/NetworkSection";
 import ContactFormSection from "@/components/home/ContactFormSection";
+import HomeCTA from "@/components/home/HomeCTA";
+import BenefitVideoSection from "@/components/home/BenefitVideoSection";
+import FeatureIntroHeader from "@/components/home/FeatureIntroHeader";
+import AboutBuiltBy from "@/components/about/AboutBuiltBy";
 
 const Index = () => (
   <>
@@ -17,13 +20,18 @@ const Index = () => (
       <title>Terminal — The Yard of the Future</title>
       <meta name="description" content="Terminal is reinventing the future of logistics through the yard with AI-native technology that turns manual tasks into connected missions." />
     </Helmet>
-    <HeroSection />
-    <FeaturesSection />
-    <YOSSection />
-    <TestimonialsSection/>
-    <LogoGridSection />
-    <NetworkSection />
-    <ContactFormSection />
+    <main className="overflow-x-clip">
+      <HeroSection />
+      <FeatureIntroHeader />
+      <FeaturesSection />
+      <YOSSection />
+      <BenefitVideoSection />
+      <AboutBuiltBy />
+      <TestimonialsSection />
+      <LogoGridSection />
+      <HomeCTA />
+      <ContactFormSection />
+    </main>
   </>
 );
 

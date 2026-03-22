@@ -57,3 +57,45 @@ export const services: Service[] = [
     price: "From $15,000 / node"
   }
 ];
+
+export const serviceHero = {
+  kicker: "Service",
+  title: "Premium Yard\nManagement Services",
+  description: "Terminal provides a suite of advanced yard management configurations designed to streamline your operations, increase visibility, and automate the mundane so you can focus on strategic outcomes."
+};
+
+export const serviceFeatures = [
+  {
+    number: "01",
+    title: "Automated Terminal Entry",
+    description: "Seamless truck entry using OCR, RFID, and smart scheduling for high-throughput environments. Eliminate gate congestion with automated check-ins and securely validate arrivals instantly.",
+    image: "/images/services/service-1.png",
+    imageSide: "right" as const,
+    actionButton: {
+      text: "LEARN MORE",
+      link: "/services/gate-automation"
+    }
+  },
+  {
+    number: "02",
+    title: "Real-time Yard Visibility",
+    description: "Stop guessing where assets are. Get a 100% accurate, real-time map of your yard. Pinpoint trailers, view live status updates, and orchestrate complex equipment moves with unprecedented clarity.",
+    image: "/images/services/service-2.png",
+    imageSide: "left" as const,
+    actionButton: {
+      text: "LEARN MORE",
+      link: "/services/yard-visibility"
+    }
+  },
+  {
+    number: "03",
+    title: "Intelligent Dock Management",
+    description: "Coordinate arrivals with dock availability to minimize idle time and maximize warehouse efficiency. Let Agentic AI assign the perfect bay in real time for optimal load process.",
+    image: "/images/services/service-4.png",
+    imageSide: "right" as const,
+    actionButton: {
+      text: "LEARN MORE",
+      link: "/services/smart-docking"
+    }
+  }
+];

@@ -13,7 +13,19 @@ const PremiumFooterLink = ({ to, children }: { to: string; children: React.React
   </li>
 );
 
-const BackgroundLines = () => {
+interface BackgroundLinesProps {
+  baseColor?: string;
+  glowColor?: string;
+  coreColor?: string;
+  animated?: boolean;
+}
+
+export const BackgroundLines = ({ 
+  baseColor = "#A2A2A2", 
+  glowColor = "white", 
+  coreColor = "white",
+  animated = true
+}: BackgroundLinesProps = {}) => {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       <svg
@@ -30,51 +42,53 @@ const BackgroundLines = () => {
         </g>
         <path
           d="M768.375 0V131.5C768.375 144.761 763.107 157.479 753.73 166.855C744.354 176.232 731.636 181.5 718.375 181.5H530.375H242.375C229.114 181.5 216.396 186.768 207.02 196.145C197.643 205.521 192.375 218.239 192.375 231.5V590.5C192.375 596.257 190.622 601.878 187.348 606.614C184.075 611.35 179.437 614.977 174.051 617.011C168.666 619.046 162.788 619.393 157.201 618.004C151.614 616.616 146.582 613.559 142.775 609.24L0.375 447.7"
-          stroke="#A2A2A2"
+          stroke={baseColor}
           strokeOpacity="0.15"
         />
 
         <g transform="translate(89.375, 0)">
           <path
             d="M1063 0.5V228.8C1063 242.061 1068.27 254.779 1077.64 264.155C1087.02 273.532 1099.74 278.8 1113 278.8H1589C1602.26 278.8 1614.98 284.068 1624.36 293.445C1633.73 302.821 1639 315.539 1639 328.8V495C1639 508.261 1644.27 520.979 1653.64 530.355C1663.02 539.732 1675.74 545 1689 545H1831"
-            stroke="#A2A2A2"
+            stroke={baseColor}
             strokeOpacity="0.15"
           />
           <path
             d="M1831 968.5L1653.53 800.74C1644.2 791.917 1631.84 787.001 1619 787H1209C1195.74 787 1183.02 792.268 1173.64 801.645C1164.27 811.021 1159 823.739 1159 837V1210.5"
-            stroke="#A2A2A2"
+            stroke={baseColor}
             strokeOpacity="0.15"
           />
           <path
             d="M-89 787H367C377.296 787.002 387.37 789.992 395.999 795.608C404.629 801.224 411.442 809.224 415.613 818.637C419.784 828.05 421.133 838.472 419.495 848.637C417.858 858.801 413.306 868.272 406.39 875.9L103 1210.5"
-            stroke="#A2A2A2"
+            stroke={baseColor}
             strokeOpacity="0.15"
           />
         </g>
         {/* Path 1 Animated Line */}
-        <g>
-          <motion.path
-            d="M768.375 0V131.5C768.375 144.761 763.107 157.479 753.73 166.855C744.354 176.232 731.636 181.5 718.375 181.5H530.375H242.375C229.114 181.5 216.396 186.768 207.02 196.145C197.643 205.521 192.375 218.239 192.375 231.5V590.5C192.375 596.257 190.622 601.878 187.348 606.614C184.075 611.35 179.437 614.977 174.051 617.011C168.666 619.046 162.788 619.393 157.201 618.004C151.614 616.616 146.582 613.559 142.775 609.24L0.375 447.7"
-            stroke="white"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            fill="none"
-            initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-            animate={{ pathOffset: 1.02 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            style={{ filter: "blur(3px)", opacity: 0.4 }}
-          />
-          <motion.path
-            d="M768.375 0V131.5C768.375 144.761 763.107 157.479 753.73 166.855C744.354 176.232 731.636 181.5 718.375 181.5H530.375H242.375C229.114 181.5 216.396 186.768 207.02 196.145C197.643 205.521 192.375 218.239 192.375 231.5V590.5C192.375 596.257 190.622 601.878 187.348 606.614C184.075 611.35 179.437 614.977 174.051 617.011C168.666 619.046 162.788 619.393 157.201 618.004C151.614 616.616 146.582 613.559 142.775 609.24L0.375 447.7"
-            stroke="white"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            fill="none"
-            initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-            animate={{ pathOffset: 1.02 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          />
-        </g>
+        {animated && (
+          <g>
+            <motion.path
+              d="M768.375 0V131.5C768.375 144.761 763.107 157.479 753.73 166.855C744.354 176.232 731.636 181.5 718.375 181.5H530.375H242.375C229.114 181.5 216.396 186.768 207.02 196.145C197.643 205.521 192.375 218.239 192.375 231.5V590.5C192.375 596.257 190.622 601.878 187.348 606.614C184.075 611.35 179.437 614.977 174.051 617.011C168.666 619.046 162.788 619.393 157.201 618.004C151.614 616.616 146.582 613.559 142.775 609.24L0.375 447.7"
+              stroke={glowColor}
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              fill="none"
+              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+              animate={{ pathOffset: 1.02 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              style={{ filter: "blur(3px)", opacity: 0.4 }}
+            />
+            <motion.path
+              d="M768.375 0V131.5C768.375 144.761 763.107 157.479 753.73 166.855C744.354 176.232 731.636 181.5 718.375 181.5H530.375H242.375C229.114 181.5 216.396 186.768 207.02 196.145C197.643 205.521 192.375 218.239 192.375 231.5V590.5C192.375 596.257 190.622 601.878 187.348 606.614C184.075 611.35 179.437 614.977 174.051 617.011C168.666 619.046 162.788 619.393 157.201 618.004C151.614 616.616 146.582 613.559 142.775 609.24L0.375 447.7"
+              stroke={coreColor}
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              fill="none"
+              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+              animate={{ pathOffset: 1.02 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+          </g>
+        )}
 
         <g transform="translate(89.375, 0)">
           <path
@@ -83,89 +97,95 @@ const BackgroundLines = () => {
             strokeOpacity="0.15"
           />
           {/* Path 2 Animated Line */}
-          <g>
-            <motion.path
-              d="M1063 0.5V228.8C1063 242.061 1068.27 254.779 1077.64 264.155C1087.02 273.532 1099.74 278.8 1113 278.8H1589C1602.26 278.8 1614.98 284.068 1624.36 293.445C1633.73 302.821 1639 315.539 1639 328.8V495C1639 508.261 1644.27 520.979 1653.64 530.355C1663.02 539.732 1675.74 545 1689 545H1831"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              fill="none"
-              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-              animate={{ pathOffset: 1.02 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
-              style={{ filter: "blur(3px)", opacity: 0.4 }}
-            />
-            <motion.path
-              d="M1063 0.5V228.8C1063 242.061 1068.27 254.779 1077.64 264.155C1087.02 273.532 1099.74 278.8 1113 278.8H1589C1602.26 278.8 1614.98 284.068 1624.36 293.445C1633.73 302.821 1639 315.539 1639 328.8V495C1639 508.261 1644.27 520.979 1653.64 530.355C1663.02 539.732 1675.74 545 1689 545H1831"
-              stroke="white"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              fill="none"
-              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-              animate={{ pathOffset: 1.02 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
-            />
-          </g>
+          {animated && (
+            <g>
+              <motion.path
+                d="M1063 0.5V228.8C1063 242.061 1068.27 254.779 1077.64 264.155C1087.02 273.532 1099.74 278.8 1113 278.8H1589C1602.26 278.8 1614.98 284.068 1624.36 293.445C1633.73 302.821 1639 315.539 1639 328.8V495C1639 508.261 1644.27 520.979 1653.64 530.355C1663.02 539.732 1675.74 545 1689 545H1831"
+                stroke={glowColor}
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+                animate={{ pathOffset: 1.02 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
+                style={{ filter: "blur(3px)", opacity: 0.4 }}
+              />
+              <motion.path
+                d="M1063 0.5V228.8C1063 242.061 1068.27 254.779 1077.64 264.155C1087.02 273.532 1099.74 278.8 1113 278.8H1589C1602.26 278.8 1614.98 284.068 1624.36 293.445C1633.73 302.821 1639 315.539 1639 328.8V495C1639 508.261 1644.27 520.979 1653.64 530.355C1663.02 539.732 1675.74 545 1689 545H1831"
+                stroke={coreColor}
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+                animate={{ pathOffset: 1.02 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
+              />
+            </g>
+          )}
 
           <path
             d="M1831 968.5L1653.53 800.74C1644.2 791.917 1631.84 787.001 1619 787H1209C1195.74 787 1183.02 792.268 1173.64 801.645C1164.27 811.021 1159 823.739 1159 837V1210.5"
-            stroke="#A2A2A2"
+            stroke={baseColor}
             strokeOpacity="0.15"
           />
           {/* Path 3 Animated Line */}
-          <g>
-            <motion.path
-              d="M1831 968.5L1653.53 800.74C1644.2 791.917 1631.84 787.001 1619 787H1209C1195.74 787 1183.02 792.268 1173.64 801.645C1164.27 811.021 1159 823.739 1159 837V1210.5"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              fill="none"
-              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-              animate={{ pathOffset: 1.02 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
-              style={{ filter: "blur(3px)", opacity: 0.4 }}
-            />
-            <motion.path
-              d="M1831 968.5L1653.53 800.74C1644.2 791.917 1631.84 787.001 1619 787H1209C1195.74 787 1183.02 792.268 1173.64 801.645C1164.27 811.021 1159 823.739 1159 837V1210.5"
-              stroke="white"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              fill="none"
-              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-              animate={{ pathOffset: 1.02 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
-            />
-          </g>
+          {animated && (
+            <g>
+              <motion.path
+                d="M1831 968.5L1653.53 800.74C1644.2 791.917 1631.84 787.001 1619 787H1209C1195.74 787 1183.02 792.268 1173.64 801.645C1164.27 811.021 1159 823.739 1159 837V1210.5"
+                stroke={glowColor}
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+                animate={{ pathOffset: 1.02 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
+                style={{ filter: "blur(3px)", opacity: 0.4 }}
+              />
+              <motion.path
+                d="M1831 968.5L1653.53 800.74C1644.2 791.917 1631.84 787.001 1619 787H1209C1195.74 787 1183.02 792.268 1173.64 801.645C1164.27 811.021 1159 823.739 1159 837V1210.5"
+                stroke={coreColor}
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+                animate={{ pathOffset: 1.02 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
+              />
+            </g>
+          )}
 
           <path
             d="M-89 787H367C377.296 787.002 387.37 789.992 395.999 795.608C404.629 801.224 411.442 809.224 415.613 818.637C419.784 828.05 421.133 838.472 419.495 848.637C417.858 858.801 413.306 868.272 406.39 875.9L103 1210.5"
-            stroke="#A2A2A2"
+            stroke={baseColor}
             strokeOpacity="0.15"
           />
           {/* Path 4 Animated Line */}
-          <g>
-            <motion.path
-              d="M-89 787H367C377.296 787.002 387.37 789.992 395.999 795.608C404.629 801.224 411.442 809.224 415.613 818.637C419.784 828.05 421.133 838.472 419.495 848.637C417.858 858.801 413.306 868.272 406.39 875.9L103 1210.5"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              fill="none"
-              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-              animate={{ pathOffset: 1.02 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
-              style={{ filter: "blur(3px)", opacity: 0.4 }}
-            />
-            <motion.path
-              d="M-89 787H367C377.296 787.002 387.37 789.992 395.999 795.608C404.629 801.224 411.442 809.224 415.613 818.637C419.784 828.05 421.133 838.472 419.495 848.637C417.858 858.801 413.306 868.272 406.39 875.9L103 1210.5"
-              stroke="white"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              fill="none"
-              initial={{ pathLength: 0.02, pathOffset: -0.02 }}
-              animate={{ pathOffset: 1.02 }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
-            />
-          </g>
+          {animated && (
+            <g>
+              <motion.path
+                d="M-89 787H367C377.296 787.002 387.37 789.992 395.999 795.608C404.629 801.224 411.442 809.224 415.613 818.637C419.784 828.05 421.133 838.472 419.495 848.637C417.858 858.801 413.306 868.272 406.39 875.9L103 1210.5"
+                stroke={glowColor}
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+                animate={{ pathOffset: 1.02 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
+                style={{ filter: "blur(3px)", opacity: 0.4 }}
+              />
+              <motion.path
+                d="M-89 787H367C377.296 787.002 387.37 789.992 395.999 795.608C404.629 801.224 411.442 809.224 415.613 818.637C419.784 828.05 421.133 838.472 419.495 848.637C417.858 858.801 413.306 868.272 406.39 875.9L103 1210.5"
+                stroke={coreColor}
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0.02, pathOffset: -0.02 }}
+                animate={{ pathOffset: 1.02 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
+              />
+            </g>
+          )}
         </g>
 
       </svg>
@@ -197,7 +217,7 @@ const TakeChargeButton = () => {
   return (
     <MotionLink 
       to="/contact" 
-      className="cta-button-premium group relative"
+      className="cta-button-premium group relative !px-5 !py-4 md:!px-8 md:!py-5"
       initial="rest"
       whileHover="hover"
       animate="rest"
@@ -266,6 +286,19 @@ const TakeChargeButton = () => {
 const Footer = () => {
   return (
     <footer className="bg-[#052424] text-white relative overflow-hidden">
+      {/* Top Scooped Edge Overlay */}
+      <div className="absolute top-0 left-0 w-full z-30 pointer-events-none leading-none">
+        <svg 
+          viewBox="0 0 1440 60" 
+          preserveAspectRatio="none" 
+          className="w-full h-[25px] md:h-[60px]"
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0 H1440 V20 H1240 C1160 20 1160 60 1080 60 H360 C280 60 280 20 200 20 H0 V0 Z" fill="white"/>
+        </svg>
+      </div>
+
       {/* Background Animated Lines */}
       <BackgroundLines />
 
@@ -283,7 +316,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Grid */}
-      <div className="relative z-20 py-12 md:py-20 lg:py-12">
+      <div className="relative z-20 py-0 md:py-20 lg:py-12">
         <div className="site-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 md:gap-x-8 md:gap-y-16 xl:gap-2">
             {/* Logo & Info */}
@@ -303,9 +336,9 @@ const Footer = () => {
               <h4 className="text-[11px] font-geist tracking-[1.98px] uppercase mb-8 md:mb-10 text-white font-semibold leading-[9px]">TECHNOLOGY</h4>
               <ul className="flex flex-col gap-[9.6px]">
                 <PremiumFooterLink to="/">Homepage</PremiumFooterLink>
-                <PremiumFooterLink to="/services">Yard Operating System</PremiumFooterLink>
-                <PremiumFooterLink to="/services/ai-yard">The Agentic AI Yard</PremiumFooterLink>
-                <PremiumFooterLink to="/calculator">Yard Efficiency Calculator</PremiumFooterLink>
+                <PremiumFooterLink to="/services/gate-automation">Automated Terminal Entry</PremiumFooterLink>
+                <PremiumFooterLink to="/services/yard-visibility">Real-time Yard Visibility</PremiumFooterLink>
+                <PremiumFooterLink to="/services/smart-docking">Intelligent Dock Management</PremiumFooterLink>
               </ul>
             </div>
 
@@ -313,7 +346,7 @@ const Footer = () => {
               <h4 className="text-[11px] font-geist tracking-[1.98px] uppercase mb-8 md:mb-10 text-white font-semibold leading-[9px]">COMPANY</h4>
               <ul className="flex flex-col gap-[9.6px]">
                 <PremiumFooterLink to="/about">About</PremiumFooterLink>
-                <PremiumFooterLink to="/resources">Resources</PremiumFooterLink>
+                <PremiumFooterLink to="/blog">Blog</PremiumFooterLink>
                 <PremiumFooterLink to="/contact">Contact</PremiumFooterLink>
               </ul>
             </div>

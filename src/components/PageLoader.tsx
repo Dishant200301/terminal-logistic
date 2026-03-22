@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 interface PageLoaderProps {
   isLoading: boolean;
   onComplete: () => void;
+  onReadyToReveal?: () => void;
 }
 
-const PageLoader = ({ isLoading, onComplete }: PageLoaderProps) => {
+const PageLoader = ({ isLoading, onComplete, onReadyToReveal }: PageLoaderProps) => {
   const [phase, setPhase] = useState<"logo" | "expand" | "done">("logo");
 
   useEffect(() => {
@@ -16,31 +17,67 @@ const PageLoader = ({ isLoading, onComplete }: PageLoaderProps) => {
     }
 
     setPhase("logo");
-    const t1 = setTimeout(() => setPhase("expand"), 800);
+    
+    // Switch the route safely underneath the loader before we unmask it
+    const t0 = setTimeout(() => {
+      onReadyToReveal?.();
+    }, 500);
+
+    // Start expanding after logo finishes its entrance/display
+    const t1 = setTimeout(() => setPhase("expand"), 1000);
+    // Give enough time for the slit to open fully
     const t2 = setTimeout(() => {
       setPhase("done");
       onComplete();
-    }, 1600);
+    }, 2000);
 
     return () => {
+      clearTimeout(t0);
       clearTimeout(t1);
       clearTimeout(t2);
     };
-  }, [isLoading, onComplete]);
+  }, [isLoading, onComplete, onReadyToReveal]);
+
+  // CSS Clip-Path polygons for the outer mask with a dynamic inner hole
+  // Structure: outer box -> seam -> inner hole (counter-clockwise) -> seam -> outer box close
+  // Inner points: Left Tip, Bottom Left, Bottom Right, Right Tip, Top Right, Top Left
+  const clipPaths = {
+    // Hidden hole (all points centered at 50,50)
+    logo: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 0% 50%, 0% 0%)",
+    // Expanding Slit Stages:
+    // 1: Center dot
+    // 2: Thin horizontal line
+    // 3: Polygon Slit (Match Reference Image 2)
+    // 4: Screen fully exposed
+    expand: [
+      "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 0% 50%, 0% 0%)",
+      "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, -10% 50%, 20% 50.2%, 80% 50.2%, 110% 50%, 80% 49.8%, 20% 49.8%, -10% 50%, 0% 50%, 0% 0%)",
+      "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, -10% 50%, 20% 70%, 80% 70%, 110% 50%, 80% 30%, 20% 30%, -10% 50%, 0% 50%, 0% 0%)",
+      "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%, -10% 50%, 0% 120%, 100% 120%, 110% 50%, 100% -20%, 0% -20%, -10% 50%, 0% 50%, 0% 0%)",
+    ]
+  };
 
   return (
     <AnimatePresence>
       {isLoading && phase !== "done" && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
-          style={{ background: "#e8e8e8" }}
-          initial={{ opacity: 1 }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#f4f4f4]"
+          initial={{ opacity: 1, clipPath: clipPaths.logo }}
+          animate={{
+            opacity: 1,
+            clipPath: phase === "expand" ? clipPaths.expand : clipPaths.logo
+          }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          // Custom transition for the array of points: snap quickly to thin line, then smoothly ease open
+          transition={{ 
+            duration: phase === "expand" ? 1.0 : 0.4, 
+            ease: "easeInOut",
+            times: phase === "expand" ? [0, 0.2, 0.6, 1] : undefined
+          }}
         >
           {/* Background corner lines */}
           <svg
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0 w-full h-full pointer-events-none"
             viewBox="0 0 1200 800"
             preserveAspectRatio="xMidYMid slice"
             fill="none"
@@ -87,43 +124,28 @@ const PageLoader = ({ isLoading, onComplete }: PageLoaderProps) => {
             />
           </svg>
 
-          {/* Center logo */}
+          {/* Center logo (Match Reference Image 1) */}
           <motion.div
-            className="relative z-10 flex items-center gap-3"
-            initial={{ opacity: 0, scale: 0.8 }}
+            className="relative z-10 flex items-center gap-2"
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{
               opacity: phase === "expand" ? 0 : 1,
-              scale: phase === "expand" ? 0.9 : 1,
+              scale: phase === "expand" ? 0.95 : 1,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            {/* T Logo Box */}
-            <div className="w-10 h-10 bg-[#1a2a2a] rounded flex items-center justify-center">
-              <span className="text-white font-bold text-xl">T</span>
-            </div>
+            {/* Dark actual Terminal icon via brightness filter */}
+            <img 
+               src="/logo.png" 
+               alt="Terminal Logo" 
+               className="w-6 h-6 md:w-8 md:h-8 object-contain"
+               style={{ filter: "brightness(0) opacity(0.9)" }} 
+            />
             {/* Terminal Text */}
-            <span className="text-[#1a2a2a] font-semibold text-2xl tracking-tight">
+            <span className="text-[#052424] font-semibold text-[22px] md:text-2xl tracking-tight">
               Terminal
             </span>
           </motion.div>
-
-          {/* Horizontal expanding strip - reveals content */}
-          <motion.div
-            className="absolute z-20 bg-[#1a2a2a]"
-            style={{
-              top: "50%",
-              left: "50%",
-              translateX: "-50%",
-              translateY: "-50%",
-            }}
-            initial={{ width: 0, height: 2, opacity: 1 }}
-            animate={
-              phase === "expand"
-                ? { width: "150vw", height: "150vh", opacity: 1 }
-                : { width: 0, height: 2, opacity: 1 }
-            }
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-          />
         </motion.div>
       )}
     </AnimatePresence>

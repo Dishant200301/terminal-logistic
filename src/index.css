@@ -77,7 +77,33 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important; /* Managed by Lenis */
+  }
+
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+@layer base {
+  ::selection {
+    @apply bg-accent text-accent-foreground;
   }
 }
 
@@ -325,4 +351,177 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+}
+
+/* Leader Panel Minimalist Scrollbar details */
+.leader-scroll::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.leader-scroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.leader-scroll::-webkit-scrollbar-thumb {
+  background-color: #A0A0A0;
+  border-radius: 999px;
+}
+
+.leader-scroll::-webkit-scrollbar-button:single-button:vertical:decrement {
+  height: 12px;
+  width: 6px;
+  background-position: center;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path d='M4 2L0 6h8z' fill='%23A0A0A0'/></svg>");
+  background-repeat: no-repeat;
+}
+
+.leader-scroll::-webkit-scrollbar-button:single-button:vertical:increment {
+  height: 12px;
+  width: 6px;
+  background-position: center;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path d='M0 2l4 4 4-4z' fill='%23A0A0A0'/></svg>");
+  background-repeat: no-repeat;
+}
+
+/* ===== Leader Card Mouse-Tracking Glow Effect ===== */
+
+#leader-cards:hover > .leader-card > .card-border,
+#investor-cards:hover > .leader-card > .card-border,
+#advisory-cards:hover > .leader-card > .card-border {
+  opacity: 1;
+}
+
+.leader-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.leader-card:hover .card-hover-overlay {
+  opacity: 1 !important;
+}
+
+/* The ::before pseudo = background fill glow (follows mouse) */
+.leader-card::before,
+.leader-card > .card-border {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Background glow on individual card hover (behind image) */
+.card-bg-glow {
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(242, 255, 215, 0.6),
+    transparent 40%
+  );
+  position: absolute;
+  inset: 0px;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 500ms;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.leader-card:hover .card-bg-glow {
+  opacity: 1;
+}
+
+/* Crosshair blink animation on hover */
+@keyframes crosshair-blink {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0) rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.crosshair-icon {
+  transition: all 0.3s ease;
+}
+
+.leader-card:hover .crosshair-icon {
+  animation: crosshair-blink 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Border glow across ALL cards when grid is hovered */
+.leader-card > .card-border {
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    #acff04,
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+/* Card content sits above the border glow, creating the thin glowing border effect */
+.leader-card > .card-content {
+  background: white;
+  height: calc(100% - 2px);
+  margin: 1px;
+  position: relative;
+  width: calc(100% - 2px);
+  z-index: 2;
+}
+
+/* ===== Backing Card Mouse-Tracking Glow Effect (same as Leader) ===== */
+
+#backing-cards:hover > .backing-card > .card-border {
+  opacity: 1;
+}
+
+.backing-card {
+  position: relative;
+}
+
+.backing-card > .card-border {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+  z-index: 1;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    #acff04,
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+.backing-card > .card-content {
+  background: white;
+  height: calc(100% - 2px);
+  margin: 1px;
+  position: relative;
+  width: calc(100% - 2px);
+  z-index: 2;
+}
+
+.backing-card:hover .card-bg-glow {
+  opacity: 1;
+}
+
+.backing-card:hover .crosshair-icon {
+  animation: crosshair-blink 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
