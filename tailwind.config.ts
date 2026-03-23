@@ -53,11 +53,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        terminal: {
-          dark: "hsl(var(--terminal-dark))",
-          green: "hsl(var(--terminal-green))",
-          light: "hsl(var(--terminal-light))",
-          gray: "hsl(var(--terminal-gray))",
+        termihub: {
+          dark: "hsl(var(--termihub-dark))",
+          green: "hsl(var(--termihub-green))",
+          light: "hsl(var(--termihub-light))",
+          gray: "hsl(var(--termihub-gray))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

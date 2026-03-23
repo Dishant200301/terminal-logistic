@@ -38,7 +38,7 @@ const AboutHero = () => {
       <div className="site-container relative z-10 text-center">
         <AnimatedSection>
           <p className="text-[13px] md:text-[18px] text-[#A2A2A2] font-normal font-sans tracking-tight mb-0 md:mb-0">
-            About Terminal
+            About Termihub
           </p>
           <div className="max-w-[1026px] mx-auto">
             <h1 className="text-[36px] sm:text-[48px] md:text-[88px] font-normal text-[#052424] tracking-tight leading-[1.05] md:leading-[1] mb-8 md:mb-12 font-sans px-4">
@@ -46,7 +46,7 @@ const AboutHero = () => {
             </h1>
           </div>
           <p className="mt-6 md:mt-12 text-[#A2A2A2] text-[16px] md:text-[20px] max-w-[700px] mx-auto leading-[1.6] text-center font-sans font-normal px-0">
-            Terminal is a different kind of logistics technology company. We exist to create a new industry standard in yard operations by completely rethinking what that yard of future will be - from fragmented bottleneck into a scalable, strategic advantage.
+            Termihub is a different kind of logistics technology company. We exist to create a new industry standard in yard operations by completely rethinking what that yard of future will be - from fragmented bottleneck into a scalable, strategic advantage.
           </p>
         </AnimatedSection>
       </div>

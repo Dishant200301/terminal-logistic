@@ -57,7 +57,7 @@ const ContactFormSection = ({ title = "Contact Us" }: { title?: string }) => {
           {/* Left - Options */}
           <AnimatedSection delay={0.1} className="relative">
             <h3 className="text-[20px] md:text-[23px] leading-[1.2] font-semibold text-[#052424] mb-8 md:mb-6 tracking-tight font-sans text-left max-w-xl">
-              Reach out to learn more about Terminal, on your terms:
+              Reach out to learn more about Termihub, on your terms:
             </h3>
             
             <div className="relative pl-6 md:pl-8">

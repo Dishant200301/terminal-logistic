@@ -100,8 +100,8 @@ const BlogCard = ({ post }: { post: typeof posts[0] }) => {
 const Blog = () => (
   <>
     <Helmet>
-      <title>Blog — Terminal</title>
-      <meta name="description" content="Insights, strategies, and innovation in logistics yard management from the Terminal team." />
+      <title>Blog — Termihub</title>
+      <meta name="description" content="Insights, strategies, and innovation in logistics yard management from the Termihub team." />
     </Helmet>
 
     {/* Hero */}

@@ -32,11 +32,11 @@ export interface ServiceDetail {
 export const serviceDetailsData: Record<string, ServiceDetail> = {
   "gate-automation": {
     slug: "gate-automation",
-    title: "Automated Terminal Entry",
+    title: "Automated Termihub Entry",
     kicker: "GATE AUTOMATION",
     description: "Transform your facility ingress and egress with an intelligent, self-service gate ecosystem powered by OCR and RFID.",
     overviewHeading: "Eliminate the gate bottleneck",
-    overviewText: "Gate congestion eats into driver hours and facility throughput. Terminal's Automated Gate system validates identity, reads trailer numbers using advanced OCR, checks appointment status, and directs drivers to their precise drop location—all in less than 30 seconds without manual intervention.",
+    overviewText: "Gate congestion eats into driver hours and facility throughput. Termihub's Automated Gate system validates identity, reads trailer numbers using advanced OCR, checks appointment status, and directs drivers to their precise drop location—all in less than 30 seconds without manual intervention.",
     features: [
       { title: "Optical Character Recognition (OCR)", description: "Instantly capture tractor, trailer, and container numbers with 99.9% accuracy, even in low light or harsh weather conditions." },
       { title: "Smart Scheduling Integration", description: "Seamlessly cross-reference arrivals with your dock scheduling system to eliminate unauthorized entries." },
@@ -68,7 +68,7 @@ export const serviceDetailsData: Record<string, ServiceDetail> = {
     kicker: "YARD OPTIMIZATION",
     description: "Get a 100% accurate, real-time map of your yard. Pinpoint trailers, view live status updates, and orchestrate moves with unprecedented clarity.",
     overviewHeading: "Total Operational Awareness",
-    overviewText: "If you don't know exactly what is in your yard, you can't optimize it. Terminal deploys a web of IoT sensors, computer vision cameras, and software integrations to create a live digital twin of your facility. Every asset, every movement, and every delay is tracked and visualized in real-time.",
+    overviewText: "If you don't know exactly what is in your yard, you can't optimize it. Termihub deploys a web of IoT sensors, computer vision cameras, and software integrations to create a live digital twin of your facility. Every asset, every movement, and every delay is tracked and visualized in real-time.",
     features: [
       { title: "Live Digital Twin", description: "View your entire yard in a high-fidelity 3D map that updates continuously with real-time asset positioning." },
       { title: "Computer Vision Tracking", description: "No tags required. Our AI tracks trailers and yard jockeys using existing camera infrastructure." },
@@ -136,13 +136,13 @@ export const serviceDetailsData: Record<string, ServiceDetail> = {
       { value: "<5m", label: "Average Door Swap Time" }
     ]
   },
-  "terminal-operating-system": {
-    slug: "terminal-operating-system",
-    title: "Unified Terminal Ecosystem",
+  "termihub-operating-system": {
+    slug: "termihub-operating-system",
+    title: "Unified Termihub Ecosystem",
     kicker: "INTEGRATION",
-    description: "Connect your WMS, TMS, and ERP into a single source of truth for all terminal operations.",
+    description: "Connect your WMS, TMS, and ERP into a single source of truth for all Termihub operations.",
     overviewHeading: "One platform to rule the yard",
-    overviewText: "Stop dealing with fragmented data silos. The Unified Terminal Ecosystem integrates your existing Warehouse Management System (WMS), Transportation Management System (TMS), and Enterprise Resource Planning (ERP) into a single, cohesive command center.",
+    overviewText: "Stop dealing with fragmented data silos. The Unified Termihub Ecosystem integrates your existing Warehouse Management System (WMS), Transportation Management System (TMS), and Enterprise Resource Planning (ERP) into a single, cohesive command center.",
     features: [
       { title: "API-First Architecture", description: "Built to seamlessly connect with BlueYonder, Manhattan, SAP, and custom legacy systems." },
       { title: "Centralized Dashboard", description: "A unified UI that brings gate, yard, and dock data into one comprehensive view." },
@@ -161,7 +161,7 @@ export const serviceDetailsData: Record<string, ServiceDetail> = {
     slug: "agentic-ai-yard",
     title: "The Agentic AI Yard",
     kicker: "AGENTIC AI",
-    description: "Leverage autonomous AI agents to orchestrate terminal missions, manage tasks, and minimize bottlenecks.",
+    description: "Leverage autonomous AI agents to orchestrate Termihub missions, manage tasks, and minimize bottlenecks.",
     overviewHeading: "The fully autonomous orchestrator",
     overviewText: "Welcome to the future of logistics. Instead of humans dragging and dropping tasks on a screen, our Agentic AI dynamically generates 'missions'. It views the yard as a chess board, looking 10 moves ahead to optimize equipment routing, labor allocation, and throughput without human intervention.",
     features: [

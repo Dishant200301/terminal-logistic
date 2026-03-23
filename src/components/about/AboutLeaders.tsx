@@ -135,7 +135,7 @@ const AboutLeaders = () => {
           </h2>
           <div className="font-sans flex flex-col items-center text-center">
             <p className="text-[18px] text-[#7F7F7F] font-normal leading-[25px] mb-6 md:mb-8">
-              Terminal leaders drive towards a combined mission with <br className="hidden md:inline" />
+              Termihub leaders drive towards a combined mission with <br className="hidden md:inline" />
               extreme ownership, smart execution, and passionate <br className="hidden md:inline" />
               innovation.
             </p>

@@ -6,8 +6,8 @@ const Technical = () => {
   return (
     <>
       <Helmet>
-        <title>Technical Index — Terminal</title>
-        <meta name="description" content="A comprehensive guide to the Terminal Yard Operating System architecture and platform." />
+        <title>Technical Index — Termihub</title>
+        <meta name="description" content="A comprehensive guide to the Termihub Yard Operating System architecture and platform." />
       </Helmet>
       
       <div className="bg-white pt-[180px] pb-[120px]">
@@ -17,7 +17,7 @@ const Technical = () => {
               Technical Index
             </h1>
             <p className="text-[18px] md:text-[20px] text-[#A2A2A2] font-normal font-['SuisseIntl',_sans-serif] leading-tight tracking-tight max-w-[600px]">
-              A comprehensive guide to the Terminal Yard Operating System.
+              A comprehensive guide to the Termihub Yard Operating System.
             </p>
           </AnimatedSection>
 
