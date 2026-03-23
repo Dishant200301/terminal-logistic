@@ -9,7 +9,7 @@ const ContactPreviewSection = () => (
           Contact Us
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-          Reach out to learn more about Termihub, on your terms.
+          Reach out to learn more about Shipper, on your terms.
         </p>
         <Link
           to="/contact"

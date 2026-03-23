@@ -101,7 +101,7 @@ const ServiceDetails = () => {
   return (
     <main className="bg-white min-h-screen pt-28 pb-20 md:pt-44 md:pb-32 font-sans">
       <Helmet>
-        <title>{service.title} — Termihub</title>
+        <title>{service.title} — Shipper</title>
         <meta name="description" content={service.description} />
       </Helmet>
 
@@ -138,13 +138,13 @@ const ServiceDetails = () => {
             <section className="mb-16">
               <AnimatedSection>
                 <h2 className="text-[20px] sm:text-[24px] md:text-[28px] font-normal text-[#052424] mb-8 tracking-tight font-sans uppercase">
-                  Why Choose Termihub?
+                  Why Choose Shipper?
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                   {(service.whyChooseUs || [
                     { title: "Efficiency First", desc: "Automate manual tasks and eliminate gate bottlenecks." },
                     { title: "Real-time Visibility", desc: "Get 100% accurate tracking of all yard assets." },
-                    { title: "Scalable Tech", desc: "Our platform grows with your Termihub volume." }
+                    { title: "Scalable Tech", desc: "Our platform grows with your Shipper volume." }
                   ]).map((point, idx) => (
                     <div key={idx} className="flex flex-col gap-3">
                       <div className="w-12 h-12 rounded-full bg-[#F5F5F5] flex items-center justify-center text-black">

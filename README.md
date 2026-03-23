@@ -1,10 +1,10 @@
-# Termihub OS — The Future of Yard Management
+# Shipper OS — The Future of Yard Management
 
-Termihub is a next-generation **Yard Operating System (YOS)** designed to automate and optimize logistics facilities through agentic AI, real-time computer vision, and seamless hardware-software integration.
+Shipper is a next-generation **Yard Operating System (YOS)** designed to automate and optimize logistics facilities through agentic AI, real-time computer vision, and seamless hardware-software integration.
 
 ## 🚀 Key Features
 
-- **Automated Termihub Entry**: Seamless truck ingress/egress using OCR and RFID for frictionless gate operations.
+- **Automated Shipper Entry**: Seamless truck ingress/egress using OCR and RFID for frictionless gate operations.
 - **Real-Time Yard Visibility**: A 100% accurate digital twin of your facility with live asset tracking.
 - **Intelligent Dock Management**: Algorithmic scheduling and bay assignment to eliminate warehouse bottlenecks.
 - **Agentic AI Orchestration**: Autonomous AI agents that generate and validate "missions" for yard hostlers and operators.
@@ -58,4 +58,4 @@ Termihub is a next-generation **Yard Operating System (YOS)** designed to automa
 
 ---
 
-© 2026 Termihub Industries. All Rights Reserved.
+© 2026 Shipper Industries. All Rights Reserved.

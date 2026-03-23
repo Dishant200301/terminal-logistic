@@ -10,7 +10,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "gate-automation",
-    title: "AUTOMATED TERMIHUB ENTRY",
+    title: "AUTOMATED SHIPPER ENTRY",
     label: "Gate Automation",
     description: "Seamless truck entry using OCR, RFID, and smart scheduling for high-throughput environments.",
     image: "/images/services/service-1.png",
@@ -41,10 +41,10 @@ export const services: Service[] = [
     price: "From $5,000 / month"
   },
   {
-    slug: "termihub-operating-system",
-    title: "UNIFIED TERMIHUB ECOSYSTEM",
+    slug: "shipper-operating-system",
+    title: "UNIFIED SHIPPER ECOSYSTEM",
     label: "Integration",
-    description: "Connect your WMS, TMS, and ERP into a single source of truth for all Termihub operations.",
+    description: "Connect your WMS, TMS, and ERP into a single source of truth for all Shipper operations.",
     image: "/images/services/service-5.png",
     price: "Enterprise License"
   },
@@ -52,7 +52,7 @@ export const services: Service[] = [
     slug: "agentic-ai-yard",
     title: "THE AGENTIC AI YARD",
     label: "Agentic AI",
-    description: "Leverage the power of autonomous AI agents to orchestrate Termihub missions, manage yard tasks, and minimize operational bottlenecks.",
+    description: "Leverage the power of autonomous AI agents to orchestrate Shipper missions, manage yard tasks, and minimize operational bottlenecks.",
     image: "/images/services/service-6.png",
     price: "From $15,000 / node"
   }
@@ -61,19 +61,19 @@ export const services: Service[] = [
 export const serviceHero = {
   kicker: "Service",
   title: "Premium Yard\nManagement Services",
-  description: "Termihub provides a suite of advanced yard management configurations designed to streamline your operations, increase visibility, and automate the mundane so you can focus on strategic outcomes."
+  description: "Shipper provides a suite of advanced yard management configurations designed to streamline your operations, increase visibility, and automate the mundane so you can focus on strategic outcomes."
 };
 
 export const serviceFeatures = [
   {
     number: "01",
-    title: "Automated Termihub Entry",
+    title: "Automated Shipper Entry",
     description: "Seamless truck entry using OCR, RFID, and smart scheduling for high-throughput environments. Eliminate gate congestion with automated check-ins and securely validate arrivals instantly.",
     image: "/images/services/service-1.png",
     imageSide: "right" as const,
     actionButton: {
       text: "LEARN MORE",
-      link: "/services/gate-automation"
+      link: "/services/shipper-operating-system"
     }
   },
   {

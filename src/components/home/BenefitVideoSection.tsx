@@ -16,7 +16,7 @@ const videos = [
     title: "Benefit 02",
     subtitle: "Easy, scalable\noperation",
     subtitleUnderline: "Easy",
-    desc: "Termihub was designed from the ground up for disruption-free operations. Easy to deploy and support, the system has a low IT lift with no 3rd party devices to support, and a modern UI/UX that's super-easy for operators to use from day one. Configurable to your yard, Termihub YOS integrates seamlessly with most TMS and WMS systems.",
+    desc: "Shipper was designed from the ground up for disruption-free operations. Easy to deploy and support, the system has a low IT lift with no 3rd party devices to support, and a modern UI/UX that's super-easy for operators to use from day one. Configurable to your yard, Shipper YOS integrates seamlessly with most TMS and WMS systems.",
   },
   {
     id: "03",
