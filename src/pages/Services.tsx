@@ -6,8 +6,8 @@ import { serviceHero, serviceFeatures } from "@/data/services";
 const Services = () => (
   <main className="bg-white min-h-screen overflow-hidden">
     <Helmet>
-      <title>Services — Termihub</title>
-      <meta name="description" content="Explore Termihub's premium yard management services with high-fidelity 3D orchestration and AI visibility." />
+      <title>Services — Shipper</title>
+      <meta name="description" content="Explore Shipper's premium yard management services with high-fidelity 3D orchestration and AI visibility." />
     </Helmet>
 
     {/* Re-using the exact layout and aesthetic of the AboutHero but mapping generic service logic */}

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const NotFound = () => (
   <>
     <Helmet>
-      <title>404 — Page Not Found — Termihub</title>
+      <title>404 — Page Not Found — Shipper</title>
     </Helmet>
     <section className="min-h-screen flex items-center justify-center">
       <div className="site-container text-center">

@@ -134,16 +134,16 @@ const PageLoader = ({ isLoading, onComplete, onReadyToReveal }: PageLoaderProps)
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            {/* Dark actual Termihub icon via brightness filter */}
+            {/* Dark actual Shipper icon via brightness filter */}
             <img 
                src="/logo.png" 
-               alt="Termihub Logo" 
+               alt="Shipper Logo" 
                className="w-6 h-6 md:w-8 md:h-8 object-contain"
                style={{ filter: "brightness(0) opacity(0.9)" }} 
             />
-            {/* Termihub Text */}
+            {/* Shipper Text */}
             <span className="text-[#052424] font-semibold text-[22px] md:text-2xl tracking-tight">
-              Termihub
+              Shipper
             </span>
           </motion.div>
         </motion.div>

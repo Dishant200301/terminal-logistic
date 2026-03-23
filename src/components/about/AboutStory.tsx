@@ -41,7 +41,7 @@ const AboutStory = () => {
               Every day, over <strong className="font-bold text-[#7F7F7F]">$50 billion of goods move through 50,000+ U.S. warehouses</strong> — yet 35% of that supply chain stalls in the yard. While transportation and warehouse systems have modernized, the yard remains the industry's blind spot, still run on clipboards, spreadsheets, and outdated IoT. The result? Bottlenecks, wasted labor, and millions lost in inefficiency.
             </p>
             <p className="mb-6 font-bold text-[#7F7F7F]">
-              Termihub is reinventing the yard.
+              Shipper is reinventing the yard.
             </p>
             <p>
               We are building the industry's first <strong className="font-bold text-[#7F7F7F]">AI-native, Computer Vision-powered Yard Operating System (YOS)</strong> — designed to digitize, automate, and optimize yard operations end to end.
@@ -50,10 +50,10 @@ const AboutStory = () => {
 
           <AnimatedSection delay={0.2}>
             <p className="mb-6">
-              Our platform connects cameras, data, and workflows into one seamless layer of visibility and control. From <strong className="font-bold text-[#7F7F7F]">gate acceleration</strong> to <strong className="font-bold text-[#7F7F7F]">asset inventory, compliance, orchestration, analytics, YMS-reimagined</strong>, Termihub delivers rapid ROI: reducing costs, accelerating throughput, and unlocking new revenue opportunities for the world's largest logistics operators.
+              Our platform connects cameras, data, and workflows into one seamless layer of visibility and control. From <strong className="font-bold text-[#7F7F7F]">gate acceleration</strong> to <strong className="font-bold text-[#7F7F7F]">asset inventory, compliance, orchestration, analytics, YMS-reimagined</strong>, Shipper delivers rapid ROI: reducing costs, accelerating throughput, and unlocking new revenue opportunities for the world's largest logistics operators.
             </p>
             <p>
-              With backing from leading investors and partnerships with several of the top 10 logistics companies, Termihub is <strong className="font-bold text-[#7F7F7F]">building with the industry, for the industry</strong> — setting the new standard for yard technology.
+              With backing from leading investors and partnerships with several of the top 10 logistics companies, Shipper is <strong className="font-bold text-[#7F7F7F]">building with the industry, for the industry</strong> — setting the new standard for yard technology.
             </p>
           </AnimatedSection>
         </div>
