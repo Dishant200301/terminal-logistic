@@ -79,7 +79,7 @@ const BlogDetails = () => {
   return (
     <div className="bg-white">
       <Helmet>
-        <title>{post.title} — Termihub</title>
+        <title>{post.title} — Shipper</title>
         <meta name="description" content={post.tagline} />
       </Helmet>
 

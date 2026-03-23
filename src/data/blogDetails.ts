@@ -28,15 +28,15 @@ export interface BlogPostDetail {
 export const blogDetails: Record<string, BlogPostDetail> = {
   "sustainability-starts-at-the-gate": {
     slug: "sustainability-starts-at-the-gate",
-    title: "Termihub Yard Achieves Sustainability Certification for Global Network",
+    title: "Shipper Yard Achieves Sustainability Certification for Global Network",
     tagline: "What DHL’s Carbon-Neutral Facility Reveals About the Most Overlooked Lever in Green Logistics",
     date: "March 11, 2026",
     category: "blog",
     img: "/images/blog/blog-2.png",
     author: {
       name: "Livia Brannan",
-      role: "Marketing at Termihub Industries",
-      bio: "Livia contributes to Termihub Industries’ marketing efforts by developing content that highlights the company’s role in advancing logistics technology. She focuses on creating clear, engaging stories that connect industry innovation with Termihub’s broader vision for the future of the yard.",
+      role: "Marketing at Shipper Industries",
+      bio: "Livia contributes to Shipper Industries’ marketing efforts by developing content that highlights the company’s role in advancing logistics technology. She focuses on creating clear, engaging stories that connect industry innovation with Shipper’s broader vision for the future of the yard.",
       avatar: "/images/blog/livia-avatar.jpg"
     },
     tableOfContents: [
@@ -63,7 +63,7 @@ export const blogDetails: Record<string, BlogPostDetail> = {
       { type: 'heading', level: 3, text: "The Detention Crisis" },
       { type: 'paragraph', text: "A study by the FMCSA found that detention times exceed two hours in one-third of all carrier trips. That means trucks are routinely stuck waiting at gates or sitting in yards burning fuel without moving freight. This is not marginal waste. It is structural inefficiency." },
       { type: 'heading', level: 2, text: "What That Means at Facility Scale" },
-      { type: 'paragraph', text: "Let’s translate that into a typical Termihub scenario. Assume a busy facility processes 200 trucks per day. If AI-driven yard orchestration reduces just 20 minutes of idling per truck, here is what happens:" },
+      { type: 'paragraph', text: "Let’s translate that into a typical Shipper scenario. Assume a busy facility processes 200 trucks per day. If AI-driven yard orchestration reduces just 20 minutes of idling per truck, here is what happens:" },
       { type: 'list', items: [
         "200 trucks × 20 minutes = 4,000 minutes saved daily",
         "That equals over 66 hours of avoided idling per day",
@@ -82,7 +82,7 @@ export const blogDetails: Record<string, BlogPostDetail> = {
       ]},
       { type: 'paragraph', text: "These inefficiencies translate directly into fuel burn. And they are solvable." },
       { type: 'heading', level: 2, text: "Sustainability Starts at the Gate" },
-      { type: 'paragraph', text: "Termihub Industries reduces gate transaction times by up to 85% and eliminates unnecessary shifter moves through AI-driven orchestration. With Termihub-in-a-Camera™, facilities gain 99.5% accurate, real-time visibility into:" },
+      { type: 'paragraph', text: "Shipper Industries reduces gate transaction times by up to 85% and eliminates unnecessary shifter moves through AI-driven orchestration. With Shipper-in-a-Camera™, facilities gain 99.5% accurate, real-time visibility into:" },
       { type: 'list', items: ["Trailer location", "Dwell time", "Gate congestion", "Yard flow"] },
       { type: 'paragraph', text: "When trucks are not waiting in line at the gate, they are not burning diesel. When trailers are moved once instead of twice, emissions drop immediately. When detention is reduced, fuel consumption falls proportionally. Sustainability becomes operational, not aspirational." },
       { type: 'heading', level: 2, text: "The Competitive Shift" },

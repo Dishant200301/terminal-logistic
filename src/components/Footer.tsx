@@ -323,9 +323,9 @@ const Footer = () => {
             <div className="flex flex-col items-start mb-8 md:mb-0">
               <Link to="/" className="flex items-center gap-3 mb-6 group">
                 <div className="w-10 h-10 rounded flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <img src="/logo.png" alt="Termihub" className="w-full h-full object-contain" />
+                  <img src="/logo.png" alt="Shipper" className="w-full h-full object-contain" />
                 </div>
-                <span className="font-bold text-[32px] tracking-tighter text-white font-sans">Termihub</span>
+                <span className="font-bold text-[32px] tracking-tighter text-white font-sans">Shipper</span>
               </Link>
 
               <GartnerBadge />
@@ -336,7 +336,7 @@ const Footer = () => {
               <h4 className="text-[11px] font-geist tracking-[1.98px] uppercase mb-8 md:mb-10 text-white font-semibold leading-[9px]">TECHNOLOGY</h4>
               <ul className="flex flex-col gap-[9.6px]">
                 <PremiumFooterLink to="/">Homepage</PremiumFooterLink>
-                <PremiumFooterLink to="/services/gate-automation">Automated Termihub Entry</PremiumFooterLink>
+                <PremiumFooterLink to="/services/gate-automation">Automated Shipper Entry</PremiumFooterLink>
                 <PremiumFooterLink to="/services/yard-visibility">Real-time Yard Visibility</PremiumFooterLink>
                 <PremiumFooterLink to="/services/smart-docking">Intelligent Dock Management</PremiumFooterLink>
               </ul>
@@ -409,7 +409,7 @@ const Footer = () => {
           <div className="mt-12 md:mt-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 relative pb-8 md:pb-0">
             <div className="flex flex-col gap-2">
               <p className="text-[11px] text-white/30 font-medium tracking-tight">
-                Copyright Termihub Industries © {new Date().getFullYear()} All Rights Reserved
+                Copyright Shipper Industries © {new Date().getFullYear()} All Rights Reserved
               </p>
               <Link to="/technical-index" className="text-[11px] text-white/30 hover:text-white transition-colors font-medium">
                 Technical Index

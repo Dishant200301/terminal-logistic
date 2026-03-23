@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://termihubos.com/sitemap.xml
+Sitemap: https://shipperos.com/sitemap.xml

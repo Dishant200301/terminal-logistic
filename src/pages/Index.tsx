@@ -17,8 +17,8 @@ import AboutBuiltBy from "@/components/about/AboutBuiltBy";
 const Index = () => (
   <>
     <Helmet>
-      <title>Termihub — The Yard of the Future</title>
-      <meta name="description" content="Termihub is reinventing the future of logistics through the yard with AI-native technology that turns manual tasks into connected missions." />
+      <title>Shipper — The Yard of the Future</title>
+      <meta name="description" content="Shipper is reinventing the future of logistics through the yard with AI-native technology that turns manual tasks into connected missions." />
     </Helmet>
     <main className="overflow-x-clip">
       <HeroSection />

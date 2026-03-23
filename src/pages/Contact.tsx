@@ -6,8 +6,8 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact — Termihub</title>
-        <meta name="description" content="Get in touch with Termihub. Schedule a demo, arrange a consultation, or learn more about our yard management platform." />
+        <title>Contact — Shipper</title>
+        <meta name="description" content="Get in touch with Shipper. Schedule a demo, arrange a consultation, or learn more about our yard management platform." />
       </Helmet>
 
       {/* Hero */}
